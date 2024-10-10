@@ -10,12 +10,11 @@ main = do
     let upperBound = length input - 1
         grid = A.listArray ((0, 0), (upperBound, upperBound)) $ concat input
     print $ followBeams [((0, 0), R)] grid S.empty
-    print $ maximum $ map (\s -> followBeams [s] grid S.empty) $ startingDirections $ length input
+    print $ maximum $ map (\s -> followBeams [s] grid S.empty) $ startingDirections upperBound
 
 startingDirections :: Int -> [Movement]
-startingDirections size = top ++ bottom ++ left ++ right
-    where bound = size - 1
-          top = map (\x -> ((x, 0), D)) [0..bound]
+startingDirections bound = top ++ bottom ++ left ++ right
+    where top = map (\x -> ((x, 0), D)) [0..bound]
           bottom = map (\x -> ((x, bound), U)) [0..bound]
           left = map (\y -> ((0, y), R)) [0..bound]
           right = map (\y -> ((bound, y), L)) [0..bound]

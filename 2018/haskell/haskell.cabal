@@ -33,6 +33,10 @@ executable 03
     import:  day
     main-is: Day03.hs
 
+executable 04
+    import:  day
+    main-is: Day04.hs
+
 executable 08
     import:  day
     main-is: Day08.hs
