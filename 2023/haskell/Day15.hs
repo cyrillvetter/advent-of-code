@@ -1,3 +1,5 @@
+{-# LANGUAGE TupleSections #-}
+
 import Data.List.Split (splitOn, splitOneOf)
 import Data.List (lookup)
 import Data.Char (ord)
@@ -8,7 +10,7 @@ type Lens = (String, Int)
 main = do
     input <- splitOn "," <$> readFile "inputs/15.txt"
     print $ sum $ map hash input
-    print $ configureLenses input $ M.fromAscList $ map (\v -> (v, [])) [0..255]
+    print $ configureLenses input $ M.fromAscList $ map (,[]) [0..255]
 
 hash :: String -> Int
 hash = foldl (\curr c -> (17 * (curr + ord c)) `mod` 256) 0
