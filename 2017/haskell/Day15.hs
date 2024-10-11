@@ -1,12 +1,14 @@
+{-# LANGUAGE NumericUnderscores #-}
+
 import Data.Bits ((.&.))
 
 aStart = 873
 bStart = 583
 
-aFactor = 16807
-bFactor = 48271
+aFactor = 16_807
+bFactor = 48_271
 
-divider = 2147483647
+divider = 2_147_483_647
 
 main = do
     print part1

@@ -1,3 +1,5 @@
+{-# LANGUAGE TypeApplications #-}
+
 import Data.List.Split (splitOn)
 import qualified Data.Set as S
 import qualified Data.Sequence as Seq

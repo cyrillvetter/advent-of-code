@@ -1,3 +1,5 @@
+{-# LANGUAGE TypeApplications #-}
+
 import Data.Sequence (Seq, fromList, update, index)
 
 main = do

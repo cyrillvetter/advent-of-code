@@ -1,3 +1,5 @@
+{-# LANGUAGE TypeApplications #-}
+
 main = do
     input <- map (read @Int) . lines <$> readFile "inputs/1.txt"
     print $ countIncreases input

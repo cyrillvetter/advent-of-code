@@ -2,8 +2,8 @@ cabal-version:      2.4
 name:               haskell
 version:            0.1.0.0
 
-synopsis: Advent of Code 2017 solutions.
-description: Haskell solutions for Advent of Code 2017.
+synopsis: Advent of Code 2020 solutions.
+description: Haskell solutions for Advent of Code 2020.
 
 common day
     build-depends:
@@ -57,10 +57,10 @@ executable 09
     import:  day
     main-is: Day09.hs
 
-executable 12
+executable 10
     import:  day
-    main-is: Day12.hs
+    main-is: Day10.hs
 
-executable 15
+executable 11
     import:  day
-    main-is: Day15.hs
+    main-is: Day11.hs

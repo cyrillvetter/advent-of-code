@@ -1,3 +1,5 @@
+{-# LANGUAGE TypeApplications #-}
+
 main = do
     input <- map (read @Integer) . lines <$> readFile "inputs/9.txt"
     let invalidNumber = findInvalidNumber input

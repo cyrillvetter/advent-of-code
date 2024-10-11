@@ -1,3 +1,5 @@
+{-# LANGUAGE TypeApplications #-}
+
 import Data.Maybe (mapMaybe, isJust, fromJust)
 
 main = do

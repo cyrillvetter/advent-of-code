@@ -7,7 +7,7 @@ description: Haskell solutions for Advent of Code 2018.
 
 common day
     build-depends:
-        base ^>=4.17,
+        base == 4.*,
         containers,
         array,
         bytestring,
@@ -18,7 +18,7 @@ common day
 
 library
     exposed-modules:  Common
-    build-depends:    base>=4.17, containers
+    build-depends:    base == 4.*, containers
     default-language: Haskell2010
 
 executable 01

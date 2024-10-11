@@ -4,6 +4,8 @@ import Data.Ord (comparing)
 import qualified Data.Set as S
 import qualified Data.Map as M
 
+import Debug.Trace (trace)
+
 type Program = (String, Int, [String])
 
 main = do

@@ -1,3 +1,5 @@
+{-# LANGUAGE TypeApplications #-}
+
 import Data.List (sort)
 
 main = do

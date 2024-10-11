@@ -1,3 +1,5 @@
+{-# LANGUAGE TypeApplications #-}
+
 import Data.List.Split (splitOn)
 import Data.List (isSuffixOf)
 import Data.Char (isDigit)

@@ -1,3 +1,5 @@
+{-# LANGUAGE TypeApplications #-}
+
 main = do
     input <- map ((\[x, y] -> (x, read @Int y)) . words) . lines <$> readFile "inputs/2.txt"
     print $ dive input 0 0
