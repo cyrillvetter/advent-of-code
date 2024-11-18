@@ -29,7 +29,7 @@ traceToSAN orbits = bfs S.empty [("YOU", 0)]
             | name `S.member` s || isNothing res = bfs s xs
             | otherwise = bfs (name `S.insert` s) (xs ++ adjacent)
             where res = name `M.lookup` orbits
-                  adjacent = map (\n -> (n, depth + 1)) $ fromJust res
+                  adjacent = map (, depth + 1) $ fromJust res
 
 parsePath :: String -> [(String, String)]
 parsePath = map ((\[a, b] -> (b, a)) . splitOn ")") . lines 

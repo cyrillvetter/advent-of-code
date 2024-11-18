@@ -1,5 +1,3 @@
-{-# LANGUAGE NumericUnderscores #-}
-
 import Data.Bits ((.&.))
 
 aStart = 873

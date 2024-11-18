@@ -31,7 +31,7 @@ isWinner board = wins board || wins (transpose board)
         wins = any (all (== Nothing))
 
 getUnmarkedSum :: Board -> Int
-getUnmarkedSum = sum . catMaybes . concat
+getUnmarkedSum = sum . concatMap catMaybes
 
 markBoard :: Int -> Board -> Board
 markBoard x = map (map (markNum x))

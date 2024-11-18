@@ -1,5 +1,5 @@
 import Data.List (nub)
-import Common
+import Common (windowsOf, allUnique)
 
 main = do
     input <- readFile "inputs/6.txt"

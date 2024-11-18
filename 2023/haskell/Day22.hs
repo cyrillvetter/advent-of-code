@@ -1,5 +1,3 @@
-{-# LANGUAGE TupleSections #-}
-
 import Data.List.Split (splitOn)
 import Data.List (sortOn)
 import qualified Data.Set as S

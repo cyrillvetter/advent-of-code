@@ -1,6 +1,6 @@
 import Data.Array.Unboxed (UArray, assocs, accumArray)
 
-input = 36000000
+input = 36_000_000
 
 main = do
     print $ findHouseWithPresents part1Presents

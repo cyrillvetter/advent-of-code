@@ -1,7 +1,7 @@
 import Data.List (transpose)
 import qualified Data.Map.Strict as M
 
-repetitions = 1000000000
+repetitions = 1_000_000_000
 
 main = do
     input <- lines <$> readFile "inputs/14.txt"

@@ -5,7 +5,7 @@ import qualified Data.IntMap as M
 main = do
     input <- map parse . lines <$> readFile "inputs/4.txt"
     print $ sum $ map calcCardPoints input
-    print $ calcTotalCards 1 input $ M.fromList $ map (\l -> (l, 1)) [1..length input]
+    print $ calcTotalCards 1 input $ M.fromList $ map (, 1) [1..length input]
 
 calcCardPoints :: Int -> Int
 calcCardPoints n = if n == 0 then 0 else 2 ^ (n - 1)

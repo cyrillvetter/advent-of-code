@@ -1,5 +1,3 @@
-{-# LANGUAGE TypeApplications #-}
-
 import Data.List.Split (splitOn)
 import Data.List (isSuffixOf)
 import Data.Char (isDigit)
@@ -16,7 +14,7 @@ main = do
     print $ length $ filter id $ map isPassportValid input
 
 parse :: String -> [[(String, String)]]
-parse = map (filter (\t -> fst t /= "cid:") . concatMap (map (splitAt 4) . splitOn " ") . lines) . splitOn "\n\n"
+parse = map (concatMap (filter (\t -> fst t /= "cid:") . map (splitAt 4) . splitOn " ") . lines) . splitOn "\n\n"
 
 isPassportValid :: [(String, String)] -> Bool
 isPassportValid p = length valid == 7 && and valid

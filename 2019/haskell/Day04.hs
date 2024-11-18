@@ -1,7 +1,7 @@
 import Data.List (group)
 
-lower = 264793
-upper = 803935
+lower = 264_793
+upper = 803_935
 
 main = do
     let increasingDigitPasswords = map (map length) $ filter allIncrease $ map (group . digits) [lower..upper]

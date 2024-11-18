@@ -13,8 +13,9 @@ common day
         bytestring,
         binary,
         split
-    default-language: Haskell2010
-    other-modules:    Common
+    default-language:   Haskell2010
+    default-extensions: NumericUnderscores, TypeApplications, TupleSections
+    other-modules:      Common
 
 library
     exposed-modules:  Common

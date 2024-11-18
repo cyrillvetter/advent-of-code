@@ -2,7 +2,7 @@ import Data.List (transpose, tails)
 
 type Point = (Int, Int)
 
-partTwoScaler = 1000000 - 1
+partTwoScaler = 1_000_000 - 1
 
 main = do
     input <- lines <$> readFile "inputs/11.txt"

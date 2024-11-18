@@ -1,5 +1,3 @@
-{-# LANGUAGE TupleSections #-}
-
 import Data.List.Split (splitOn, splitOneOf)
 import Data.List (lookup)
 import Data.Char (ord)
