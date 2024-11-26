@@ -1,9 +1,0 @@
-[alias]
-scaffold = "run --quiet --release scaffold"
-download = "run --quiet --release download"
-
-solve = "run --release --bin"
-all = "run --release all"
-
-[env]
-AOC_YEAR = "2023"
