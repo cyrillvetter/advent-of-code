@@ -45,3 +45,7 @@ executable 05
 executable 06
     import:  day
     main-is: Day06.hs
+
+executable 16
+    import:  day
+    main-is: Day16.hs
