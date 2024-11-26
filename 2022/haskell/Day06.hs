@@ -1,4 +1,3 @@
-import Data.List (nub)
 import Common (windowsOf, allUnique)
 
 main = do
