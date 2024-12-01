@@ -15,12 +15,15 @@ trd3 (_, _, c) = c
 toTuple :: [a] -> (a, a)
 toTuple [x, y] = (x, y)
 
+toTuple3 :: [a] -> (a, a, a)
+toTuple3 [x, y, z] = (x, y, z)
+
 count :: (a -> Bool) -> [a] -> Int
 count f = length . filter f
 
 allUnique :: Ord a => [a] -> Bool
 allUnique [] = True
-allUnique list = length list == length (S.fromList list)
+allUnique list = length list == S.size (S.fromList list)
 
 windowsOf :: Int -> [a] -> [[a]]
 windowsOf size list
