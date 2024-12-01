@@ -3,12 +3,6 @@ module Common where
 import qualified Data.Set as S
 import qualified Data.IntSet as IS
 
-ints :: [String] -> [Int]
-ints = map read
-
-integers :: [String] -> [Integer]
-integers = map read
-
 fst3 :: (a, b, c) -> a
 fst3 (a, _, _) = a
 

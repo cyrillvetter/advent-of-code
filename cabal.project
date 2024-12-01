@@ -1,0 +1,12 @@
+packages:
+  ./2015/haskell
+  ./2016/haskell
+  ./2017/haskell
+  ./2018/haskell
+  ./2019/haskell
+  ./2020/haskell
+  ./2021/haskell
+  ./2022/haskell
+  ./2023/haskell
+  ./2024/haskell
+  ./common

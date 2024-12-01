@@ -1,13 +1,14 @@
 cabal-version:      2.4
-name:               haskell
+name:               aoc2021
 version:            0.1.0.0
 
-synopsis: Advent of Code 2018 solutions.
-description: Haskell solutions for Advent of Code 2018.
+synopsis: Advent of Code 2021 solutions.
+description: Haskell solutions for Advent of Code 2021.
 
 common day
     build-depends:
         base == 4.*,
+        common,
         containers,
         array,
         bytestring,
@@ -15,12 +16,6 @@ common day
         split
     default-language: Haskell2010
     default-extensions: NumericUnderscores, TypeApplications, TupleSections
-    other-modules:    Common
-
-library
-    exposed-modules:  Common
-    build-depends:    base == 4.*, containers
-    default-language: Haskell2010
 
 executable 01
     import:  day
@@ -37,8 +32,3 @@ executable 03
 executable 04
     import:  day
     main-is: Day04.hs
-
-executable 08
-    import:  day
-    main-is: Day08.hs
-

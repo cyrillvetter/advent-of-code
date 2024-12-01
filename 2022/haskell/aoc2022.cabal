@@ -1,13 +1,14 @@
 cabal-version:      2.4
-name:               haskell
+name:               aoc2022
 version:            0.1.0.0
 
-synopsis: Advent of Code 2016 solutions.
-description: Haskell solutions for Advent of Code 2016.
+synopsis: Advent of Code 2022 solutions.
+description: Haskell solutions for Advent of Code 2022.
 
 common day
     build-depends:
         base == 4.*,
+        common,
         containers,
         array,
         bytestring,
@@ -15,12 +16,6 @@ common day
         split
     default-language: Haskell2010
     default-extensions: NumericUnderscores, TypeApplications, TupleSections
-    other-modules:    Common
-
-library
-    exposed-modules:  Common
-    build-depends:    base == 4.*, containers
-    default-language: Haskell2010
 
 executable 01
     import:  day
@@ -38,14 +33,18 @@ executable 04
     import:  day
     main-is: Day04.hs
 
-executable 05
-    import:  day
-    main-is: Day05.hs
-
 executable 06
     import:  day
     main-is: Day06.hs
 
-executable 16
+executable 12
     import:  day
-    main-is: Day16.hs
+    main-is: Day12.hs
+
+executable 22
+    import:  day
+    main-is: Day22.hs
+
+executable 25
+    import:  day
+    main-is: Day25.hs

@@ -1,0 +1,11 @@
+cabal-version:      2.4
+name:               common
+version:            0.1.0.0
+
+synopsis: Common functions for Advent of Code.
+description: Common functions for Advent of Code.
+
+library
+    exposed-modules:  Common
+    build-depends:    base == 4.*, containers
+    default-language: Haskell2010
