@@ -40,13 +40,13 @@ pub fn part_two(input: &str) -> Solution {
         if let Next::Bot(id) = bot.low {
             bots.get_mut(&id).unwrap().insert_value(bot.values[0]);
         } else if let Next::Output(id) = bot.low {
-            if id >= 0 && id <= 2 { output_values.push(bot.values[0]) }
+            if id <= 2 { output_values.push(bot.values[0]) }
         }
 
         if let Next::Bot(id) = bot.high {
             bots.get_mut(&id).unwrap().insert_value(bot.values[1]);
         } else if let Next::Output(id) = bot.high {
-            if id >= 0 && id <= 2 { output_values.push(bot.values[1]) }
+            if id <= 2 { output_values.push(bot.values[1]) }
         }
 
         bots.get_mut(&bot_id).unwrap().values.clear();

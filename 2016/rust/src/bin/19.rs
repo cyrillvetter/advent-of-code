@@ -8,7 +8,6 @@ pub fn part_one(_input: &str) -> Solution {
 }
 
 pub fn part_two(_input: &str) -> Solution {
-    const INPUT: usize = 3005290;
     Solution::Empty
 }
 

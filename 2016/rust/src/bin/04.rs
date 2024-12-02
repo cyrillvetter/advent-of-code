@@ -28,7 +28,7 @@ pub fn part_two(input: &str) -> Solution {
     let storage_room_section_id = input
         .lines()
         .map(|l| parse_line(l))
-        .map(|(c, section_id, k)| {
+        .map(|(c, section_id, _)| {
             let decrypted_room_name: String = c
                 .chars()
                 .map(|n| {
