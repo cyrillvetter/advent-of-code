@@ -5,6 +5,7 @@ type Point = (Int, Int)
 type Grid = A.UArray Point Char
 
 dirs = [(1, 0), (-1, 0), (0, 1), (0, -1), (1, 1), (-1, -1), (1, -1), (-1, 1)]
+cross = ["SM", "MS"]
 
 main = do
     input <- lines <$> readFile "inputs/4.txt"
@@ -19,9 +20,9 @@ countXmas :: Grid -> Point -> Int
 countXmas grid p = count ((== "XMAS") . getRange grid) $ map (createPath p) dirs
 
 isCrossMas :: Grid -> Point -> Bool
-isCrossMas grid (y, x) = all ((`elem` ["MS", "SM"]) . getRange grid) [diag1, diag2]
-    where diag1 = [(y - 1, x - 1), (y + 1, x + 1)]
-          diag2 = [(y + 1, x - 1), (y - 1, x + 1)]
+isCrossMas grid (y, x) = diag1 `elem` cross && diag2 `elem` cross
+    where diag1 = getRange grid [(y - 1, x - 1), (y + 1, x + 1)]
+          diag2 = getRange grid [(y + 1, x - 1), (y - 1, x + 1)]
 
 createPath :: Point -> Point -> [Point]
 createPath (x, y) (dx, dy) = map (\i -> (x + dx * i, y + dy * i)) [0..3]

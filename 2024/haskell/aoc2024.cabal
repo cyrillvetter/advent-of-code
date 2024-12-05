@@ -33,3 +33,7 @@ executable 03
 executable 04
     import:  day
     main-is: Day04.hs
+
+executable 05
+    import:  day
+    main-is: Day05.hs

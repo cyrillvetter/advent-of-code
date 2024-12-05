@@ -37,11 +37,3 @@ firstDuplicate = check S.empty
         check set (x:xs)
             | x `S.member` set = x
             | otherwise = check (x `S.insert` set) xs
-
-firstIntDuplicate :: [Int] -> Int
-firstIntDuplicate = check IS.empty
-    where
-        check :: IS.IntSet -> [Int] -> Int
-        check set (x:xs)
-            | x `IS.member` set = x
-            | otherwise = check (x `IS.insert` set) xs
