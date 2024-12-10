@@ -1,5 +1,5 @@
 import qualified Data.Array.Unboxed as A
-import Common (count)
+import Common (count, buildCharArray)
 
 type Point = (Int, Int)
 type Grid = A.UArray Point Char
@@ -8,11 +8,8 @@ dirs = [(1, 0), (-1, 0), (0, 1), (0, -1), (1, 1), (-1, -1), (1, -1), (-1, 1)]
 cross = ["SM", "MS"]
 
 main = do
-    input <- lines <$> readFile "inputs/4.txt"
-    let bound = length input - 1
-        grid = A.listArray ((0, 0), (bound, bound)) $ concat input
-        assocs = A.assocs grid
-
+    grid <- buildCharArray <$> readFile "inputs/4.txt"
+    let assocs = A.assocs grid
     print $ sum $ map (countXmas grid . fst) assocs
     print $ count (isCrossMas grid) $ map fst $ filter ((== 'A') . snd) assocs
 
@@ -25,7 +22,7 @@ isCrossMas grid (y, x) = diag1 `elem` cross && diag2 `elem` cross
           diag2 = getRange grid [(y + 1, x - 1), (y - 1, x + 1)]
 
 createPath :: Point -> Point -> [Point]
-createPath (x, y) (dx, dy) = map (\i -> (x + dx * i, y + dy * i)) [0..3]
+createPath (x, y) (dx, dy) = [ (x + dx * i, y + dy * i) | i <- [0..3] ]
 
 getRange :: Grid -> [Point] -> String
 getRange grid = map (maybe '.' id . (grid A.!?))
