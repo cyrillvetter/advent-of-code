@@ -7,5 +7,5 @@ description: Common functions for Advent of Code.
 
 library
     exposed-modules:  Common
-    build-depends:    base == 4.*, containers
+    build-depends:    base == 4.*, containers, array
     default-language: Haskell2010

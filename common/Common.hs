@@ -1,7 +1,8 @@
 module Common where
 
+import Data.Char (digitToInt)
 import qualified Data.Set as S
-import qualified Data.IntSet as IS
+import qualified Data.Array.Unboxed as A
 
 fst3 :: (a, b, c) -> a
 fst3 (a, _, _) = a
@@ -17,6 +18,23 @@ toTuple [x, y] = (x, y)
 
 toTuple3 :: [a] -> (a, a, a)
 toTuple3 [x, y, z] = (x, y, z)
+
+addTuples :: Num a => (a, a) -> (a, a) -> (a, a)
+addTuples (x1, y1) (x2, y2) = (x1 + x2, y1 + y2)
+
+subTuples :: Num a => (a, a) -> (a, a) -> (a, a)
+subTuples (x1, y1) (x2, y2) = (x2 - x1, y2 - y1)
+
+adj4 :: Num a => (a, a) -> [(a, a)]
+adj4 c = map (addTuples c) [(1, 0), (-1, 0), (0, 1), (0, -1)]
+
+buildCharArray :: String -> A.UArray (Int, Int) Char
+buildCharArray input = A.listArray ((0, 0), (length l - 1, length (head l) - 1)) (concat l)
+    where l = lines input
+
+buildIntArray :: String -> A.UArray (Int, Int) Int
+buildIntArray input = A.listArray ((0, 0), (length l - 1, length (head l) - 1)) (concat l)
+    where l = map (map digitToInt) (lines input)
 
 count :: (a -> Bool) -> [a] -> Int
 count f = length . filter f
