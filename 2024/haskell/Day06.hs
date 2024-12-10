@@ -42,7 +42,7 @@ isLoop start grid = walk S.empty start (-1, 0)
                   nextVisited = (p, d) `S.insert` visited
 
 placeObstacles :: Grid -> S.Set Point -> [Grid]
-placeObstacles grid = map (\p -> grid A.// [(p, '#')]) . S.elems
+placeObstacles grid ps = [ grid A.// [(p, '#')] | p <- S.elems ps, grid A.! p == '.']
 
 turnRight :: Point -> Point
 turnRight p = case p of
