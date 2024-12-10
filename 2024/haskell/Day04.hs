@@ -11,7 +11,7 @@ main = do
     grid <- buildCharArray <$> readFile "inputs/4.txt"
     let assocs = A.assocs grid
     print $ sum $ map (countXmas grid . fst) assocs
-    print $ count (isCrossMas grid) $ map fst $ filter ((== 'A') . snd) assocs
+    print $ count (isCrossMas grid) [ a | (a, 'A') <- assocs ]
 
 countXmas :: Grid -> Point -> Int
 countXmas grid p = count ((== "XMAS") . getRange grid) $ map (createPath p) dirs
