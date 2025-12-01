@@ -9,4 +9,5 @@ packages:
   ./2022/haskell
   ./2023/haskell
   ./2024/haskell
+  ./2025/haskell
   ./common
