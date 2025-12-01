@@ -2,16 +2,16 @@ dialStart = 50
 
 main = do
     input <- map parse . lines <$> readFile "inputs/01.txt"
-    print $ length $ filter (== 0) $ scanl p1 dialStart input
-    print $ snd $ foldl p2 (dialStart, 0) input
+    print $ length $ filter (== 0) $ scanl turnDial dialStart input
+    print $ snd $ foldl countClicks (dialStart, 0) input
 
-p1 :: Int -> Int -> Int
-p1 cur turn = (if next < 0 then 100 - abs next else next) `mod` 100
-    where next = cur + turn
+turnDial :: Int -> Int -> Int
+turnDial num amt = (num + amt) `mod` 100
 
-p2 :: (Int, Int) -> Int -> (Int, Int)
-p2 (cur, acc) turn = (p1 cur turn, acc + res)
-    where res = length $ filter (== 0) $ drop 1 $ scanl (\acc c -> if (acc + c) < 0 || (acc + c) > 99 then 100 - abs (acc + c) else acc + c) cur $ replicate (abs turn) (signum turn)
+countClicks :: (Int, Int) -> Int -> (Int, Int)
+countClicks (num, acc) amt = (turnDial num amt, acc + clicks)
+    where moves = replicate (abs amt - 1) (signum amt)
+          clicks = length $ filter (== 0) $ scanl turnDial num moves
 
 parse :: String -> Int
 parse ('L':n) = -(read n)
