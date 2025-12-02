@@ -20,3 +20,11 @@ common day
 executable 01
     import:  day
     main-is: Day01.hs
+
+executable 02
+    import:  day
+    main-is: Day02.hs
+
+executable 03
+    import:  day
+    main-is: Day03.hs
