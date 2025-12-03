@@ -2,8 +2,10 @@ import Data.Char (digitToInt)
 
 main = do
     input <- map (map digitToInt) . lines <$> readFile "inputs/03.txt"
-    print $ sum $ map p1 input
+    print $ sum $ map (joltage 1) input
+    print $ sum $ map (joltage 11) input
 
-p1 :: [Int] -> Int
-p1 xs = largest * 10 + maximum (drop 1 (dropWhile (/= largest) xs))
-    where largest = maximum $ init xs
+joltage :: Int -> [Int] -> Int
+joltage 0 xs = maximum xs
+joltage n xs = largest * (10 ^ n) + joltage (n - 1) (drop 1 (dropWhile (/= largest) xs))
+    where largest = maximum $ take (length xs - n) xs
