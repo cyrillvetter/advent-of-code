@@ -7,12 +7,12 @@ type Grid = A.UArray Coord Char
 main = do
     grid <- buildCharArray <$> readFile "inputs/04.txt"
     print $ count (accessible grid) [ c | (c, '@') <- A.assocs grid ]
-    print $ remove grid
+    print $ removeRolls grid
 
-remove :: Grid -> Int
-remove grid = case updates of
+removeRolls :: Grid -> Int
+removeRolls grid = case updates of
     [] -> 0
-    _ -> length updates + remove (grid A.// updates)
+    _ -> length updates + removeRolls (grid A.// updates)
     where updates = [ (c, '.') | (c, '@') <- A.assocs grid, accessible grid c ]
 
 accessible :: Grid -> Coord -> Bool
