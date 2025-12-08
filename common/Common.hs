@@ -31,6 +31,9 @@ adj4 c = map (addTuples c) [(1, 0), (-1, 0), (0, 1), (0, -1)]
 adj8 :: Num a => (a, a) -> [(a, a)]
 adj8 c = map (addTuples c) [(1, 0), (-1, 0), (0, 1), (0, -1), (1, 1), (-1,  1), (1, -1), (-1, -1)]
 
+cartesianProduct :: [a] -> [b] -> [(a, b)]
+cartesianProduct as bs = [(a, b) | a <- as, b <- bs]
+
 buildCharArray :: String -> A.UArray (Int, Int) Char
 buildCharArray input = A.listArray ((0, 0), (length l - 1, length (head l) - 1)) (concat l)
     where l = lines input
